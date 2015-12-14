@@ -1,0 +1,9 @@
+COMPONENT=OscilloscopeAppC
+
+#change channel
+CC2420_CHANNEL = 12
+
+#cancel ACK
+#CFLAGS += -DCC2420_NO_ACKNOWLEDGEMENTS
+
+include $(MAKERULES)
