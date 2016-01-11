@@ -134,8 +134,8 @@ implementation {
     oscilloscope_t* out;
 
 	//hjy change: get LQI & RSSI
-	in->lqi = call CC2420Packet.getRssi(msg);
-	in->rssi =call CC2420Packet.getLqi(msg);
+	in->lqi = call CC2420Packet.getLqi(msg);
+	in->rssi =call CC2420Packet.getRssi(msg);
 
 
     if (uartbusy == FALSE) {

@@ -98,4 +98,8 @@ implementation {
   BaseStationP.RadioAMPacket -> Radio;
   
   BaseStationP.Leds -> LedsC;
+
+  //hjy change
+  components CC2420ActiveMessageC as CC2420Reader;
+  BaseStationP.CC2420Packet -> CC2420Reader;	
 }

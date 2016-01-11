@@ -916,7 +916,7 @@ enum __nesc_unnamed4258 {
 
   MAC_FOOTER_SIZE = sizeof(uint16_t ), 
 
-  MAC_PACKET_SIZE = MAC_HEADER_SIZE + 28 + MAC_FOOTER_SIZE, 
+  MAC_PACKET_SIZE = MAC_HEADER_SIZE + 48 + MAC_FOOTER_SIZE, 
 
   CC2420_SIZE = MAC_HEADER_SIZE + MAC_FOOTER_SIZE
 };
@@ -1294,7 +1294,7 @@ typedef union TOSRadioMetadata {
 #line 14
 typedef nx_struct message_t {
   nx_uint8_t header[sizeof(message_header_t )];
-  nx_uint8_t data[28];
+  nx_uint8_t data[48];
   nx_uint8_t footer[sizeof(message_footer_t )];
   nx_uint8_t metadata[sizeof(message_metadata_t )];
 } __attribute__((packed)) message_t;
@@ -18013,7 +18013,7 @@ inline static error_t OscilloscopeC__AMSend__send(am_addr_t addr, message_t * ms
 static inline uint8_t CC2420CsmaP__Send__maxPayloadLength(void )
 #line 173
 {
-  return 28;
+  return 48;
 }
 
 # 112 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
@@ -21751,7 +21751,7 @@ static inline error_t CC2420ControlP__Init__init(void )
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   CC2420ControlP__m_pan = CC2420ControlP__ActiveMessageAddress__amGroup();
   CC2420ControlP__m_tx_power = 31;
-  CC2420ControlP__m_channel = 12;
+  CC2420ControlP__m_channel = 13;
 
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   for (i = 0; i < 4; i++) {

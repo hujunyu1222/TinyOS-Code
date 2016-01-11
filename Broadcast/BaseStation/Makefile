@@ -5,6 +5,10 @@ CFLAGS += -DTASKLET_IS_TASK
 
 
 #change channel
-CC2420_CHANNEL = 12
+CC2420_CHANNEL = 13
+
+#change the message_t size
+CFALGS += -DCC2420_NO_ACKNOWLEDGEMENTS
+
 include $(MAKERULES)
 

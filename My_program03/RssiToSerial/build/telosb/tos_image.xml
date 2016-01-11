@@ -1,12 +1,12 @@
 <tos_image>
   <ident>
-    <username>hujunyu</username>
-    <appname>RssiToSerialC</appname>
-    <timestamp>5660F0F0L</timestamp>
     <deluge_support>no</deluge_support>
+    <appname>RssiToSerialC</appname>
     <platform>telosb</platform>
+    <uidhash>43BE38A9L</uidhash>
+    <timestamp>56763199L</timestamp>
+    <username>hujunyu</username>
     <userhash>1070FE8BL</userhash>
-    <uidhash>C5D509E3L</uidhash>
     <hostname>hujunyu-ThinkPa</hostname>
   </ident>
   <image format="ihex">

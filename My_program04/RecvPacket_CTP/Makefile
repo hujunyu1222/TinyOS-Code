@@ -10,4 +10,6 @@ CFLAGS += -D'TOSH_DATA_LENGTH=48'
 #cancel ACK
 CFLAGS += -DCC2420_NO_ACKNOWLEDGEMENTS
 
+#change the transmit power: max 31
+#CFLAGS += -DCC2420_DEF_POWER = 31
 include $(MAKERULES)

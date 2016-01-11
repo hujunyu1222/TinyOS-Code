@@ -56,6 +56,8 @@
 
 #include "AM.h"
 #include "Serial.h"
+//hjy change
+#include "Oscilloscope.h"
 
 module BaseStationP @safe() {
   uses {
@@ -75,6 +77,9 @@ module BaseStationP @safe() {
     interface AMPacket as RadioAMPacket;
 
     interface Leds;
+
+	//hjy change
+	interface CC2420Packet;
   }
 }
 
@@ -160,6 +165,11 @@ implementation
 
   message_t* receive(message_t *msg, void *payload, uint8_t len) {
     message_t *ret = msg;
+	//hjy change
+	oscilloscope_t* in = (oscilloscope_t*)payload;
+
+	in->rssi = call CC2420Packet.getRssi(msg);
+	in->lqi = call CC2420Packet.getLqi(msg);
 
     atomic {
       if (!uartFull)
