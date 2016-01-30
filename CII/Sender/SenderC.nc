@@ -83,7 +83,7 @@ implementation {
 	threshold = 97;//84等于RSSI的-88dBm
 	count = 0;
 	cii =0;
-	ciiThreshold = 0;
+	ciiThreshold = 680; //采样时间128 × 128us
 	//Send Packet
 	local.interval = DEFAULT_INTERVAL;
 	local.id = TOS_NODE_ID;
@@ -183,7 +183,9 @@ implementation {
 		local.count++;
 		clear();
 	}
-	clear();
+	else {
+		clear();
+	}
   }
 
   event void PacketSender.sendDone(message_t* msg, error_t error) {

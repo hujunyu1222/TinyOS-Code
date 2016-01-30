@@ -5,10 +5,15 @@ CFLAGS += -DTASKLET_IS_TASK
 
 
 #change channel
-CC2420_CHANNEL = 12
+# 12: without CII
+# 13: with CII
+CC2420_CHANNEL = 13
 
 #change the message_t size
 CFALGS += -DCC2420_NO_ACKNOWLEDGEMENTS
+
+#change the message_t size
+CFLAGS += -D'TOSH_DATA_LENGTH=90'
 
 include $(MAKERULES)
 

@@ -974,16 +974,7 @@ enum __nesc_unnamed4262 {
 
   AM_OSCILLOSCOPE = 0x93
 };
-
-
-
-
-
-
-
-
-
-
+#line 38
 #line 28
 typedef nx_struct oscilloscope {
   nx_uint16_t version;
@@ -991,6 +982,7 @@ typedef nx_struct oscilloscope {
   nx_uint16_t id;
   nx_uint16_t count;
   nx_uint8_t channel;
+  nx_uint8_t nothing[70];
   nx_uint32_t cii;
 } __attribute__((packed)) 
 
@@ -1070,7 +1062,7 @@ enum __nesc_unnamed4263 {
 
   MAC_FOOTER_SIZE = sizeof(uint16_t ), 
 
-  MAC_PACKET_SIZE = MAC_HEADER_SIZE + 28 + MAC_FOOTER_SIZE, 
+  MAC_PACKET_SIZE = MAC_HEADER_SIZE + 90 + MAC_FOOTER_SIZE, 
 
   CC2420_SIZE = MAC_HEADER_SIZE + MAC_FOOTER_SIZE
 };
@@ -1351,7 +1343,7 @@ typedef union TOSRadioMetadata {
 #line 14
 typedef nx_struct message_t {
   nx_uint8_t header[sizeof(message_header_t )];
-  nx_uint8_t data[28];
+  nx_uint8_t data[90];
   nx_uint8_t footer[sizeof(message_footer_t )];
   nx_uint8_t metadata[sizeof(message_metadata_t )];
 } __attribute__((packed)) message_t;
@@ -2212,7 +2204,7 @@ message_t *
 
 BaseStationP__UartReceive__receive(
 # 69 "BaseStationP.nc"
-am_id_t arg_0x4074c010, 
+am_id_t arg_0x4074b1b8, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -2265,7 +2257,7 @@ error_t error);
 #line 110
 static void BaseStationP__UartSend__sendDone(
 # 68 "BaseStationP.nc"
-am_id_t arg_0x40777a48, 
+am_id_t arg_0x40776ce8, 
 # 103 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -3932,13 +3924,13 @@ uint8_t arg_0x41204388);
 # 54 "/opt/tinyos-2.1.2/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 static void /*Msp430Uart1P.UartP*/Msp430UartP__0__UsartInterrupts__rxDone(
 # 51 "/opt/tinyos-2.1.2/tos/chips/msp430/usart/Msp430UartP.nc"
-uint8_t arg_0x4123f510, 
+uint8_t arg_0x4123e510, 
 # 54 "/opt/tinyos-2.1.2/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 uint8_t data);
 #line 49
 static void /*Msp430Uart1P.UartP*/Msp430UartP__0__UsartInterrupts__txDone(
 # 51 "/opt/tinyos-2.1.2/tos/chips/msp430/usart/Msp430UartP.nc"
-uint8_t arg_0x4123f510);
+uint8_t arg_0x4123e510);
 # 143 "/opt/tinyos-2.1.2/tos/chips/msp430/usart/HplMsp430Usart.nc"
 static void HplMsp430Usart1P__Usart__enableUartRx(void );
 #line 123
@@ -4838,7 +4830,7 @@ uint8_t len);
 #line 80
 static error_t BaseStationP__UartSend__send(
 # 68 "BaseStationP.nc"
-am_id_t arg_0x40777a48, 
+am_id_t arg_0x40776ce8, 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -19742,7 +19734,7 @@ inline static uint16_t CC2420ActiveMessageP__CC2420Config__getPanAddr(void ){
 static inline uint8_t CC2420CsmaP__Send__maxPayloadLength(void )
 #line 173
 {
-  return 28;
+  return 90;
 }
 
 # 112 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
@@ -20312,7 +20304,7 @@ inline static error_t /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__SubSen
 static inline uint8_t /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Packet__maxPayloadLength(void )
 #line 131
 {
-  return 28;
+  return 90;
 }
 
 #line 68
@@ -20340,13 +20332,13 @@ uint8_t len)
 }
 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
-inline static error_t BaseStationP__UartSend__send(am_id_t arg_0x40777a48, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t BaseStationP__UartSend__send(am_id_t arg_0x40776ce8, am_addr_t addr, message_t * msg, uint8_t len){
 #line 80
   unsigned char __nesc_result;
 #line 80
 
 #line 80
-  __nesc_result = /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__send(arg_0x40777a48, addr, msg, len);
+  __nesc_result = /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__AMSend__send(arg_0x40776ce8, addr, msg, len);
 #line 80
 
 #line 80
@@ -20714,7 +20706,7 @@ static inline error_t CC2420ControlP__Init__init(void )
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   CC2420ControlP__m_pan = CC2420ControlP__ActiveMessageAddress__amGroup();
   CC2420ControlP__m_tx_power = 31;
-  CC2420ControlP__m_channel = 12;
+  CC2420ControlP__m_channel = 13;
 
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   for (i = 0; i < 4; i++) {

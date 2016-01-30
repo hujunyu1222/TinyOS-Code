@@ -805,7 +805,7 @@ enum __nesc_unnamed4253 {
 
 
 
-  LOG2SAMPLES = 7
+  LOG2SAMPLES = 1
 };
 # 39 "/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430Timer.h"
 enum __nesc_unnamed4254 {
@@ -19969,7 +19969,7 @@ static inline error_t CC2420ControlP__Init__init(void )
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   CC2420ControlP__m_pan = CC2420ControlP__ActiveMessageAddress__amGroup();
   CC2420ControlP__m_tx_power = 31;
-  CC2420ControlP__m_channel = 12;
+  CC2420ControlP__m_channel = 18;
 
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   for (i = 0; i < 4; i++) {

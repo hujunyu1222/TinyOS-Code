@@ -2,4 +2,4 @@
 
 make telosb
 
-make telosb install,16 bsl,/dev/ttyUSB0
+make telosb install,$2 bsl,/dev/ttyUSB$1

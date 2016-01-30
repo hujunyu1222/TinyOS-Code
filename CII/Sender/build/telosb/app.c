@@ -815,6 +815,7 @@ typedef nx_struct rssi_serial_msg {
 
 
 
+
 #line 13
 typedef nx_struct oscilloscope {
   nx_uint16_t version;
@@ -822,6 +823,7 @@ typedef nx_struct oscilloscope {
   nx_uint16_t id;
   nx_uint16_t count;
   nx_uint8_t channel;
+  nx_uint8_t nothing[70];
   nx_uint32_t cii;
 } __attribute__((packed)) oscilloscope_t;
 
@@ -838,7 +840,7 @@ enum __nesc_unnamed4253 {
   LOG2SAMPLES = 7, 
 
 
-  DEFAULT_INTERVAL = 512, 
+  DEFAULT_INTERVAL = 256, 
   AM_OSCILLOSCOPE = 0x93
 };
 # 39 "/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430Timer.h"
@@ -1020,7 +1022,7 @@ enum __nesc_unnamed4263 {
 
   MAC_FOOTER_SIZE = sizeof(uint16_t ), 
 
-  MAC_PACKET_SIZE = MAC_HEADER_SIZE + 28 + MAC_FOOTER_SIZE, 
+  MAC_PACKET_SIZE = MAC_HEADER_SIZE + 90 + MAC_FOOTER_SIZE, 
 
   CC2420_SIZE = MAC_HEADER_SIZE + MAC_FOOTER_SIZE
 };
@@ -1398,7 +1400,7 @@ typedef union TOSRadioMetadata {
 #line 14
 typedef nx_struct message_t {
   nx_uint8_t header[sizeof(message_header_t )];
-  nx_uint8_t data[28];
+  nx_uint8_t data[90];
   nx_uint8_t footer[sizeof(message_footer_t )];
   nx_uint8_t metadata[sizeof(message_metadata_t )];
 } __attribute__((packed)) message_t;
@@ -2677,17 +2679,17 @@ uint8_t len);
 # 31 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__upperLength(
 # 54 "/opt/tinyos-2.1.2/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40adc688, 
+uart_id_t arg_0x40adb688, 
 # 31 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t dataLinkLen);
 #line 15
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__offset(
 # 54 "/opt/tinyos-2.1.2/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40adc688);
+uart_id_t arg_0x40adb688);
 # 23 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__dataLinkLength(
 # 54 "/opt/tinyos-2.1.2/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40adc688, 
+uart_id_t arg_0x40adb688, 
 # 23 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t upperLen);
 # 81 "/opt/tinyos-2.1.2/tos/lib/serial/SendBytePacket.nc"
@@ -5073,15 +5075,15 @@ static inline void SenderC__AMSend__sendDone(message_t *bufPtr, error_t error);
 static inline void SenderC__ReadRssi__readDone(error_t result, uint16_t val);
 #line 177
 static inline void SenderC__Timer0__fired(void );
-#line 189
+#line 191
 static inline void SenderC__PacketSender__sendDone(message_t *msg, error_t error);
-#line 202
+#line 204
 static inline void SenderC__Config__syncDone(error_t error);
 
 
 
 static inline void SenderC__sendPacket(void );
-#line 221
+#line 223
 static inline void SenderC__readRssi__runTask(void );
 
 
@@ -5092,7 +5094,7 @@ static inline void SenderC__readRssi__runTask(void );
 
 
 static inline void SenderC__sendSerialMsg__runTask(void );
-#line 261
+#line 263
 static void SenderC__clear(void );
 
 
@@ -6061,17 +6063,17 @@ uint8_t len);
 # 31 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__upperLength(
 # 54 "/opt/tinyos-2.1.2/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40adc688, 
+uart_id_t arg_0x40adb688, 
 # 31 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t dataLinkLen);
 #line 15
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__offset(
 # 54 "/opt/tinyos-2.1.2/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40adc688);
+uart_id_t arg_0x40adb688);
 # 23 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__dataLinkLength(
 # 54 "/opt/tinyos-2.1.2/tos/lib/serial/SerialDispatcherP.nc"
-uart_id_t arg_0x40adc688, 
+uart_id_t arg_0x40adb688, 
 # 23 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
 message_t *msg, uint8_t upperLen);
 # 71 "/opt/tinyos-2.1.2/tos/lib/serial/SendBytePacket.nc"
@@ -14089,11 +14091,11 @@ inline static void SenderC__Leds__led0Toggle(void ){
 #line 67
 }
 #line 67
-# 271 "SenderC.nc"
+# 273 "SenderC.nc"
 static inline void SenderC__report_problem(void )
-#line 271
+#line 273
 {
-#line 271
+#line 273
   SenderC__Leds__led0Toggle();
 }
 
@@ -14136,17 +14138,17 @@ inline static void SenderC__Leds__led1Toggle(void ){
 #line 83
 }
 #line 83
-# 272 "SenderC.nc"
+# 274 "SenderC.nc"
 static inline void SenderC__report_sent(void )
-#line 272
+#line 274
 {
-#line 272
+#line 274
   SenderC__Leds__led1Toggle();
 }
 
-#line 189
+#line 191
 static inline void SenderC__PacketSender__sendDone(message_t *msg, error_t error)
-#line 189
+#line 191
 {
   if (error == SUCCESS) 
     {
@@ -17515,9 +17517,9 @@ inline static cc2420_status_t CC2420ControlP__IEEEADR__write(uint8_t offset, uin
 #line 63
 }
 #line 63
-# 202 "SenderC.nc"
+# 204 "SenderC.nc"
 static inline void SenderC__Config__syncDone(error_t error)
-#line 202
+#line 204
 {
 }
 
@@ -19139,13 +19141,13 @@ uint8_t dataLinkLen)
 }
 
 # 31 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
-inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__upperLength(uart_id_t arg_0x40adc688, message_t *msg, uint8_t dataLinkLen){
+inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__upperLength(uart_id_t arg_0x40adb688, message_t *msg, uint8_t dataLinkLen){
 #line 31
   unsigned char __nesc_result;
 #line 31
 
 #line 31
-  switch (arg_0x40adc688) {
+  switch (arg_0x40adb688) {
 #line 31
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 31
@@ -19155,7 +19157,7 @@ inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 #line 31
     default:
 #line 31
-      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__upperLength(arg_0x40adc688, msg, dataLinkLen);
+      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__upperLength(arg_0x40adb688, msg, dataLinkLen);
 #line 31
       break;
 #line 31
@@ -19182,13 +19184,13 @@ static inline uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 }
 
 # 15 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
-inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__offset(uart_id_t arg_0x40adc688){
+inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__offset(uart_id_t arg_0x40adb688){
 #line 15
   unsigned char __nesc_result;
 #line 15
 
 #line 15
-  switch (arg_0x40adc688) {
+  switch (arg_0x40adb688) {
 #line 15
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 15
@@ -19198,7 +19200,7 @@ inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 #line 15
     default:
 #line 15
-      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__offset(arg_0x40adc688);
+      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__offset(arg_0x40adb688);
 #line 15
       break;
 #line 15
@@ -20526,7 +20528,7 @@ inline static error_t SenderC__PacketSender__send(am_addr_t addr, message_t * ms
 static inline uint8_t CC2420CsmaP__Send__maxPayloadLength(void )
 #line 173
 {
-  return 28;
+  return 90;
 }
 
 # 112 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
@@ -20762,9 +20764,9 @@ inline static uint8_t SenderC__PacketSender__maxPayloadLength(void ){
 #line 123
 }
 #line 123
-# 206 "SenderC.nc"
+# 208 "SenderC.nc"
 static inline void SenderC__sendPacket(void )
-#line 206
+#line 208
 {
   if (!SenderC__sendBusy && sizeof SenderC__local <= SenderC__PacketSender__maxPayloadLength()) 
     {
@@ -20796,7 +20798,9 @@ static inline void SenderC__Timer0__fired(void )
       (__nesc_temp42 = SenderC__local.count.nxdata, __nesc_hton_uint16(__nesc_temp42, (__nesc_temp43 = __nesc_ntoh_uint16(__nesc_temp42)) + 1), __nesc_temp43);
       SenderC__clear();
     }
-  SenderC__clear();
+  else {
+      SenderC__clear();
+    }
 }
 
 # 204 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
@@ -20960,13 +20964,13 @@ uint8_t upperLen)
 }
 
 # 23 "/opt/tinyos-2.1.2/tos/lib/serial/SerialPacketInfo.nc"
-inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__dataLinkLength(uart_id_t arg_0x40adc688, message_t *msg, uint8_t upperLen){
+inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__dataLinkLength(uart_id_t arg_0x40adb688, message_t *msg, uint8_t upperLen){
 #line 23
   unsigned char __nesc_result;
 #line 23
 
 #line 23
-  switch (arg_0x40adc688) {
+  switch (arg_0x40adb688) {
 #line 23
     case TOS_SERIAL_ACTIVE_MESSAGE_ID:
 #line 23
@@ -20976,7 +20980,7 @@ inline static uint8_t /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__
 #line 23
     default:
 #line 23
-      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__dataLinkLength(arg_0x40adc688, msg, upperLen);
+      __nesc_result = /*SerialDispatcherC.SerialDispatcherP*/SerialDispatcherP__0__PacketInfo__default__dataLinkLength(arg_0x40adb688, msg, upperLen);
 #line 23
       break;
 #line 23
@@ -21058,7 +21062,7 @@ inline static error_t /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__SubSen
 static inline uint8_t /*SerialActiveMessageC.AM*/SerialActiveMessageP__0__Packet__maxPayloadLength(void )
 #line 131
 {
-  return 28;
+  return 90;
 }
 
 #line 68
@@ -21145,9 +21149,9 @@ inline static void * SenderC__Packet__getPayload(message_t * msg, uint8_t len){
 #line 126
 }
 #line 126
-# 230 "SenderC.nc"
+# 232 "SenderC.nc"
 static inline void SenderC__sendSerialMsg__runTask(void )
-#line 230
+#line 232
 {
   if (SenderC__locked) {
       return;
@@ -21159,7 +21163,7 @@ static inline void SenderC__sendSerialMsg__runTask(void )
           return;
         }
       { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 240
+#line 242
         {
           __nesc_hton_uint16(rsm->rssiAvgValue.nxdata, SenderC__total >> LOG2SAMPLES);
           __nesc_hton_uint16(rsm->rssiLargestValue.nxdata, SenderC__largest);
@@ -21173,7 +21177,7 @@ static inline void SenderC__sendSerialMsg__runTask(void )
           SenderC__cii = 0;
           SenderC__count = 0;
         }
-#line 252
+#line 254
         __nesc_atomic_end(__nesc_atomic); }
       __nesc_hton_uint8(rsm->channel.nxdata, SenderC__Config__getChannel());
       if (SenderC__AMSend__send(AM_BROADCAST_ADDR, &SenderC__packet, sizeof(rssi_serial_msg_t )) == SUCCESS) {
@@ -21219,9 +21223,9 @@ inline static error_t SenderC__ReadRssi__read(void ){
 #line 55
 }
 #line 55
-# 221 "SenderC.nc"
+# 223 "SenderC.nc"
 static inline void SenderC__readRssi__runTask(void )
-#line 221
+#line 223
 {
 
   if (SenderC__ReadRssi__read() != SUCCESS) {
@@ -21504,7 +21508,7 @@ static inline error_t CC2420ControlP__Init__init(void )
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   CC2420ControlP__m_pan = CC2420ControlP__ActiveMessageAddress__amGroup();
   CC2420ControlP__m_tx_power = 31;
-  CC2420ControlP__m_channel = 12;
+  CC2420ControlP__m_channel = 13;
 
   CC2420ControlP__m_ext_addr = CC2420ControlP__LocalIeeeEui64__getId();
   for (i = 0; i < 4; i++) {
@@ -22257,7 +22261,7 @@ static inline void SenderC__Boot__booted(void )
   SenderC__threshold = 97;
   SenderC__count = 0;
   SenderC__cii = 0;
-  SenderC__ciiThreshold = 0;
+  SenderC__ciiThreshold = 680;
 
   __nesc_hton_uint16(SenderC__local.interval.nxdata, DEFAULT_INTERVAL);
   __nesc_hton_uint16(SenderC__local.id.nxdata, TOS_NODE_ID);
@@ -25869,9 +25873,9 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(u
   /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
 }
 
-# 261 "SenderC.nc"
+# 263 "SenderC.nc"
 static void SenderC__clear(void )
-#line 261
+#line 263
 {
   SenderC__total = 0;
   SenderC__largest = 0;

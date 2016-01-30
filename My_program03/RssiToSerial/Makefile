@@ -9,7 +9,7 @@ SpecAnalyzer.class: $(wildcard *.java) SpecAnalyzer.java
 	javac *.java
 
 #change sense channel   11~26
-CC2420_CHANNEL=12 
+CC2420_CHANNEL=18 
 
 #change the transmit power
 #CFLAGS += -DD2420_DEF_REPOWER=10
