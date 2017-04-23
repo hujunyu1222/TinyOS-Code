@@ -17,6 +17,8 @@ typedef nx_struct oscilloscope {
 	nx_uint16_t count;
 	nx_uint8_t channel;
 	nx_uint32_t cii;
+	//lqi
+	nx_uint8_t lqi;
 } oscilloscope_t;
 
 enum {

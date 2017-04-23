@@ -1,13 +1,13 @@
 <tos_image>
   <ident>
-    <uidhash>FB75064FL</uidhash>
     <appname>BaseStationC</appname>
-    <deluge_support>no</deluge_support>
-    <userhash>1070FE8BL</userhash>
+    <timestamp>57EDCE14L</timestamp>
+    <hostname>hujunyu-Lenovo-</hostname>
+    <uidhash>2146D64BL</uidhash>
     <username>hujunyu</username>
-    <timestamp>569302EBL</timestamp>
+    <userhash>8493DD2DL</userhash>
     <platform>telosb</platform>
-    <hostname>hujunyu-ThinkPa</hostname>
+    <deluge_support>no</deluge_support>
   </ident>
   <image format="ihex">
 :10400000314000391542200175F335D0085A3F4040

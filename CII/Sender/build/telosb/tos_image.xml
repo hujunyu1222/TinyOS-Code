@@ -1,13 +1,13 @@
 <tos_image>
   <ident>
-    <hostname>hujunyu-ThinkPa</hostname>
-    <platform>telosb</platform>
-    <deluge_support>no</deluge_support>
+    <userhash>8493DD2DL</userhash>
     <username>hujunyu</username>
+    <timestamp>569C4436L</timestamp>
     <appname>SenderAppC</appname>
-    <timestamp>569311B2L</timestamp>
-    <uidhash>6F789FB8L</uidhash>
-    <userhash>1070FE8BL</userhash>
+    <deluge_support>no</deluge_support>
+    <uidhash>ECA0F246L</uidhash>
+    <platform>telosb</platform>
+    <hostname>hujunyu-Lenovo-</hostname>
   </ident>
   <image format="ihex">
 :10400000314000391542200175F335D0085A3F4040

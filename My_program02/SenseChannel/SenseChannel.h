@@ -16,7 +16,7 @@
 
 enum {
 	/* Default sampling period.  */
-	RSSIREADINGS = 10,
+	RSSIREADINGS = 1,
 	
 	DEFAULT_INTERVAL = 1024,
 
@@ -28,7 +28,7 @@ typedef nx_struct channelRssi {
 	nx_uint16_t interval;
 	nx_uint16_t id;
 	nx_uint16_t count;
-	
-	nx_uint16_t regRssi[10];
+	nx_uint16_t regRssi;	
+//	nx_uint16_t regRssi[RSSIREADINGS];
 } channelRssi_t;
 #endif

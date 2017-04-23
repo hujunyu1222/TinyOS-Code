@@ -33,7 +33,7 @@ typedef nx_struct oscilloscope {
   nx_uint8_t channel;
   nx_uint32_t cii;
   //nx_uint16_t rssi;
-  //nx_uint16_t lqi;
+  nx_uint16_t lqi;
 } oscilloscope_t;
 
 #endif

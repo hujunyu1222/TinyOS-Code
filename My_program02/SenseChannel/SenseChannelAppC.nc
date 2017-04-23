@@ -31,6 +31,7 @@ implementation {
 	SenseChannelC.RadioControl -> ActiveMessageC;
 	SenseChannelC.SerialControl -> SerialActiveMessageC;
 	SenseChannelC.SerialSend -> SerialAMSenderC.AMSend;
+	SenseChannelC.Packet -> SerialActiveMessageC;
 
 	components new PoolC(message_t, 10) as UARTMessagePoolP,
 	  new QueueC(message_t*, 10) as UARTQueueP;

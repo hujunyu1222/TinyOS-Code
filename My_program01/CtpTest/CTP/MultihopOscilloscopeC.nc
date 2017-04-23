@@ -161,7 +161,7 @@ implementation {
 	if (call Timer1.isRunning()) call Timer1.stop();
 
      call Timer.startPeriodic(20);
-     call Timer1.startPeriodic(2000);
+     call Timer1.startPeriodic(1000);
 	 //call Alarm0.start(128);
     reading = 0;
     rssReading =0;

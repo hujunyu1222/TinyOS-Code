@@ -53,7 +53,7 @@ enum {
   // When to send a packet is based upon how many samples have been taken, not a 
   // predetermined amount of time. Rough estimates of time can be found using the 
   // conversion stated above. 
-  LOG2SAMPLES = 7,
+  LOG2SAMPLES = 1,
 };
 
 

@@ -1,13 +1,13 @@
 <tos_image>
   <ident>
-    <uidhash>02EE56B4L</uidhash>
-    <timestamp>5677AECBL</timestamp>
-    <appname>BaseStationC</appname>
-    <username>hujunyu</username>
-    <platform>telosb</platform>
+    <timestamp>57382A0FL</timestamp>
     <deluge_support>no</deluge_support>
-    <userhash>1070FE8BL</userhash>
-    <hostname>hujunyu-ThinkPa</hostname>
+    <platform>telosb</platform>
+    <hostname>hujunyu-Lenovo-</hostname>
+    <appname>BaseStationC</appname>
+    <userhash>8493DD2DL</userhash>
+    <uidhash>0F6037EFL</uidhash>
+    <username>hujunyu</username>
   </ident>
   <image format="ihex">
 :10400000314000391542200175F335D0085A3F4040
@@ -60,7 +60,7 @@
 :1042F000B0129E47F2D040001E00F2D020001E00F7
 :10430000B012EE55824FE811B012AA49824CAE129B
 :10431000824DB012824EB212824FB412D2421611A6
-:10432000C811C24BC911F2401F009C12F2400D008F
+:10432000C811C24BC911F2401F009C12F24012008A
 :104330002715B012AA49824CAE12824DB012824E9D
 :10434000B212824FB4123E40AE120D4E3D500700E5
 :104350006F4EEE4D0000CD4F00001E533D533E907A

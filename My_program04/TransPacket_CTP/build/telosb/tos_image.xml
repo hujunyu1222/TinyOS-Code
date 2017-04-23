@@ -1,13 +1,13 @@
 <tos_image>
   <ident>
-    <uidhash>82451C70L</uidhash>
-    <appname>MultihopOscillo</appname>
-    <platform>telosb</platform>
-    <userhash>1070FE8BL</userhash>
-    <username>hujunyu</username>
-    <hostname>hujunyu-ThinkPa</hostname>
     <deluge_support>no</deluge_support>
-    <timestamp>566D611DL</timestamp>
+    <hostname>hujunyu-Lenovo-</hostname>
+    <userhash>8493DD2DL</userhash>
+    <username>hujunyu</username>
+    <platform>telosb</platform>
+    <uidhash>711331EBL</uidhash>
+    <timestamp>573821C3L</timestamp>
+    <appname>MultihopOscillo</appname>
   </ident>
   <image format="ihex">
 :10400000314000391542200175F335D0085A3F4040
@@ -72,7 +72,7 @@
 :1043B000F2D040001E00F2D020001E00B0122E6687
 :1043C000824F0613B0126651824C5019824D521919
 :1043D000824E5419824F5619D2421811DE12C2432E
-:1043E000DF12F2401F003A19F24019006D19B012A5
+:1043E000DF12F2401F003A19F24012006D19B012AC
 :1043F0006651824C5019824D5219824E5419824F87
 :1044000056193E4050190D4E3D5007006F4EEE4D6F
 :104410000000CD4F00001E533D533E905419F6232B

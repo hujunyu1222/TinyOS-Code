@@ -169,7 +169,7 @@ implementation
 	oscilloscope_t* in = (oscilloscope_t*)payload;
 
 //	in->rssi = call CC2420Packet.getRssi(msg);
-//	in->lqi = call CC2420Packet.getLqi(msg);
+	in->lqi = call CC2420Packet.getLqi(msg);
 
     atomic {
       if (!uartFull)
