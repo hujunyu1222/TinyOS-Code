@@ -16,6 +16,7 @@ typedef nx_struct oscilloscope {
 	nx_uint16_t id;
 	nx_uint16_t count;
 	nx_uint8_t channel;
+	nx_uint8_t nothing[70];
 	nx_uint32_t cii;
 	//lqi
 	nx_uint8_t lqi;
@@ -34,7 +35,7 @@ enum {
   LOG2SAMPLES = 7,
 
   //Send Packet
-  DEFAULT_INTERVAL =  512,
+  DEFAULT_INTERVAL =  256,
   AM_OSCILLOSCOPE = 0x93
 };
 

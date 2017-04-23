@@ -1,5 +1,6 @@
 <tos_image>
   <ident>
+<<<<<<< HEAD
     <deluge_support>no</deluge_support>
     <username>hujunyu</username>
     <appname>RssiToSerialC</appname>
@@ -8,6 +9,16 @@
     <platform>telosb</platform>
     <uidhash>1E7F237FL</uidhash>
     <hostname>hujunyu-Lenovo-</hostname>
+=======
+    <username>hujunyu</username>
+    <timestamp>5699E4EEL</timestamp>
+    <hostname>hujunyu-ThinkPa</hostname>
+    <platform>telosb</platform>
+    <appname>RssiToSerialC</appname>
+    <userhash>1070FE8BL</userhash>
+    <uidhash>C99E60C1L</uidhash>
+    <deluge_support>no</deluge_support>
+>>>>>>> c5ab2c296f13823cb03c7aa5a11ba141af8d12d4
   </ident>
   <image format="ihex">
 :10400000314000391542200175F335D0085A3F4040
@@ -56,7 +67,7 @@
 :1042B000B0122847F2D040001E00F2D020001E00AD
 :1042C000B0127E55824FFE11B0121649824CBE12BA
 :1042D000824DC012824EC212824FC412D2422811A5
-:1042E000AC11C24BAD11F2401F00AC12F2400C00F9
+:1042E000AC11C24BAD11F2401F00AC12F2401200F3
 :1042F000C712B0121649824CBE12824DC012824EB5
 :10430000C212824FC4123E40BE120D4E3D500700F5
 :104310006F4EEE4D0000CD4F00001E533D533E90BA
